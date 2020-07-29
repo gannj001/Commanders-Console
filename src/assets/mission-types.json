@@ -1,0 +1,20 @@
+{"missionTypes": [
+        {
+            "Name": "Combat Patrol",
+            "MinSize": 0,
+            "MaxSize": 500,
+            "Missions": [
+                "Incisive Attack",
+                "Outriders",
+                "Encircle"
+            ]
+        },
+        {
+            "Name": "Incursion",
+            "MinSize": 501,
+            "MaxSize": 1000,
+            "Missions": []
+        }
+    ]
+}
+

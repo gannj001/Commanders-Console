@@ -1,0 +1,5 @@
+<h1>Mission Type</h1>
+<p *ngIf="selectedMissionType">{{ selectedMissionType.Name }}</p>
+<app-mission-type-feature *ngFor="let mt of missionTypes" [missionType]="mt" (selectEvent)="selectMissionHandler($event)"></app-mission-type-feature>
+
+<app-primary-mission *ngIf="selectedMissionType" [selectedMissionType]="selectedMissionType"></app-primary-mission>

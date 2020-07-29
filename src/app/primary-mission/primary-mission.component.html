@@ -1,0 +1,15 @@
+
+<hr/>
+
+<p>{{ selectedMissionType.Name }}</p>
+<p *ngIf="selectedPrimaryMission">Primary Mission: {{ selectedPrimaryMission.Name }}</p>
+<ul>
+  <li *ngFor="let pm of this.selectedMissionType.Missions">
+    <button (click)="setPrimaryMission(pm)">Choose {{ pm }}</button>
+  </li>
+</ul>
+
+<p>All Missions</p>
+<ol>
+  <ul *ngFor="let pm of allPrimaryMissions">{{ pm | json }}</ul>
+</ol>

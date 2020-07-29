@@ -1,0 +1,54 @@
+{
+    "secondary-objectives": [
+        {
+            "class": "Purge The Enemy",
+            "objectives": [
+                {
+                    "name": "Assassinate",
+                    "type": "End Game Objective",
+                    "objective": ""
+                },
+                {
+                    "name": "Bring it Down",
+                    "type": "End Game Objective",
+                    "objective":""
+                },
+                {
+                    "name": "Titan Slayers",
+                    "type": "End Game Objective",
+                    "objective": ""
+                },
+                {
+                    "name": "Slay the Warlord",
+                    "type":"End Game Objective",
+                    "objective":""
+                }
+            ]
+        },
+        {
+            "class": "No Mercy, No Respite",
+            "objectives": [
+                {
+                    "name": "Thin Their Ranks",
+                    "type":"End Game Objective",
+                    "objective":""
+                },
+                {
+                    "name":"Attrition",
+                    "type":"Progressive Objective",
+                    "objective":""
+                },
+                {
+                    "name":"While We Stand, We Fight",
+                    "type":"End Game Objective",
+                    "objective":""
+                },
+                {
+                    "name":"First Strike",
+                    "type":"End Game Objective",
+                    "objective":""
+                }
+            ]
+        }
+    ]
+}

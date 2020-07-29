@@ -1,0 +1,129 @@
+{
+    "primary-missions": [
+        {
+            "Name": "Incisive Attack",
+            "MissionRules": {
+                "Name": "Sweep and Clear",
+                "Rule": "In this mission, if you control an objective marker at the end of your Command phase, it remains under your control, even if you have no models within range of it, unless your opponent controls it at the end of any subsequent phase."
+            },
+            "PrimaryObjective": {
+                "Name": "Take and Hold (Progressive)",
+                "Objective": [
+                    "They control one or more objective markers",
+                    "They control two or more objective markers",
+                    "They control more objective markers than their opponent controls"
+                ]
+            },
+            "SecondaryObjective": {
+                "Name": "Surgical Assault (Progressive)",
+                "Objective": "Score 5 victory points if you control the objective marker in your opponent's deployment zone at the end of your turn."
+            }
+        },
+        {
+            "Name": "Outriders",
+            "PrimaryObjective": {
+                "Name": "Take and Hold (Progressive)",
+                "Objective": [
+                    "They control one or more objective markers",
+                    "They control two or more objective markers",
+                    "They control more objective markers than their opponent controls"
+                ]
+            },
+            "SecondaryObjective": {
+                "Name": "Survey (Progressive)",
+                "Objective": "Score 5 victory points if you control both of the objective markers that are not in either player's deployment zone at the end of your Command phase. This secondary objective cannot be scored in the first battle round."
+            }
+        },
+        {
+            "Name": "Encircle",
+            "PrimaryObjective": {
+                "Name": "Take and Hold (Progressive)",
+                "Objective": [
+                    "They control one or more objective markers",
+                    "They control two or more objective markers",
+                    "They control more objective markers than their opponent controls"
+                ]
+            },
+            "SecondaryObjective": {
+                "Name": "Encircle (Progressive)",
+                "Objective": "Score 3 victory points if you have at least one unit from your army (excluding aircraft) wholly within 6\" of your battlefield edge at the end of your turn and at least one unit from your army (excluding aircraft) wholly within 6\" of your opponent's battlefield edge at the end of your turn (score 5 victory points instead if one of these units is also wholly within your opponent's deployment zone)"
+            }
+        },
+        {
+            "Name": "Divide and Conquer",
+            "PrimaryObjective": {
+                "Name": "",
+                "Objective": [
+                ]
+            },
+            "SecondaryObjective": {
+                "Name": "",
+                "Objective": ""
+            }
+        },
+        {
+            "Name": "Crossfire",
+            "PrimaryObjective": {
+                "Name": "",
+                "Objective": [
+                ]
+            },
+            "SecondaryObjective": {
+                "Name": "",
+                "Objective": ""
+            }
+        },
+        {
+            "Name": "Centre Ground",
+            "PrimaryObjective": {
+                "Name": "",
+                "Objective": [
+                ]
+            },
+            "SecondaryObjective": {
+                "Name": "",
+                "Objective": ""
+            }
+        
+        },
+        {
+            "Name": "Forward Push",
+            "PrimaryObjective": {
+                "Name": "",
+                "Objective": [
+                ]
+            },
+            "SecondaryObjective": {
+                "Name": "",
+                "Objective": ""
+            }
+        
+        },
+        {
+            "Name": "Ransack",
+            "PrimaryObjective": {
+                "Name": "",
+                "Objective": [
+                ]
+            },
+            "SecondaryObjective": {
+                "Name": "",
+                "Objective": ""
+            }
+        
+        },
+        {
+            "Name": "Shifting Front",
+            "PrimaryObjective": {
+                "Name": "",
+                "Objective": [
+                ]
+            },
+            "SecondaryObjective": {
+                "Name": "",
+                "Objective": ""
+            }
+        
+        }
+    ]
+}
