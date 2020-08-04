@@ -1,0 +1,8 @@
+<div class="row">
+  <div class="col-sm-2">
+    <app-secondary-feature [secondaryMission]="primaryMission.SecondaryObjective"></app-secondary-feature>
+  </div>
+  <div *ngFor="let sc of secondaryClasses" class="col-sm-2">
+    <app-secondary-class-feature [secondaryClass]="sc"></app-secondary-class-feature>
+  </div>
+</div>

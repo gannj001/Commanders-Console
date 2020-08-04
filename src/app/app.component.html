@@ -1,4 +1,17 @@
-<!--The content below is only a placeholder and can be replaced.-->
-<app-mission-type></app-mission-type>
+<div class="container">
+    <div class="jumbotron">
+        <h1>Commander's Console Mission Manager</h1>
+        <p>Welcome to Commander's Console! Follow the instructions below:</p>
+        <ol>
+            <li>Choose a mission size</li>
+            <li>Choose a primary mission</li>
+            <li>Choose your secondary missions</li>
+        </ol>
+    </div>
 
-<router-outlet></router-outlet>
+    <app-mission-type></app-mission-type>
+    <app-primary-mission *ngIf="missionType"></app-primary-mission>
+    <app-secondary-mission *ngIf="primaryObjective"></app-secondary-mission>
+
+    <router-outlet></router-outlet>
+</div>

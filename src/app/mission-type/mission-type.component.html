@@ -1,5 +1,17 @@
-<h1>Mission Type</h1>
-<p *ngIf="selectedMissionType">{{ selectedMissionType.Name }}</p>
-<app-mission-type-feature *ngFor="let mt of missionTypes" [missionType]="mt" (selectEvent)="selectMissionHandler($event)"></app-mission-type-feature>
 
-<app-primary-mission *ngIf="selectedMissionType" [selectedMissionType]="selectedMissionType"></app-primary-mission>
+
+<div *ngIf="missionType; else missionTypeSelector">
+    <div class="jumbotron">
+        <h1>Mission Size: {{ missionType.Name }} ({{missionType.MinSize}}-{{missionType.MaxSize}})</h1><button (click)="cancelMissionType()" class="btn btn-danger">Cancel</button>
+    </div>
+</div> 
+
+<ng-template #missionTypeSelector>
+    <div class="jumbotron">
+        <h1>Mission Type</h1>
+
+        <div class="card-group">
+            <app-mission-type-feature *ngFor="let mt of missionTypes" [missionType]="mt" (selectEvent)="selectMissionHandler($event)"></app-mission-type-feature>
+        </div>
+    </div>
+</ng-template>

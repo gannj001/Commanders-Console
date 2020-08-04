@@ -1,31 +1,24 @@
 import { Injectable, Input } from '@angular/core';
-import { MissionType } from '../models/mission-type';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
-import { SecondaryMission } from '../models/secondary-mission';
+import { SecondaryClass } from '../models/secondary-class';
 
 @Injectable({
   providedIn: 'root'
 })
 export class SecondaryMissionService {
   
-  SecondaryMissions: SecondaryMission[]
-  SecondaryMission: SecondaryMission
+  SecondaryMissions: SecondaryClass[]
+  SecondaryMission: SecondaryClass
 
   constructor(private httpClient: HttpClient) {
-    this.httpClient.get<SecondaryMission[]>('./assets/secondary-missions.json').pipe(map(result => result)).subscribe(pm => {
-      this.SecondaryMissions = pm["secondary-missions"] as SecondaryMission[]
+    this.httpClient.get<SecondaryClass[]>('./assets/secondary-missions.json').pipe(map(result => result)).subscribe(pm => {
+      this.SecondaryMissions = pm["secondary-objectives"] as SecondaryClass[]
     });
   }
 
-  getSecondaryMissions(): Observable<SecondaryMission[]> {
-    return this.httpClient.get<SecondaryMission[]>('./assets/secondary-missions.json').pipe(map(result => result));
+  getSecondaryMissions(): Observable<SecondaryClass[]> {
+    return this.httpClient.get<SecondaryClass[]>('./assets/secondary-missions.json').pipe(map(result => result));
   }
-
-  getSecondaryMissionByName(pmn: string): SecondaryMission {
-    this.getSecondaryMissions().pipe<SecondaryMission>(map(missions => missions.find(mission => mission.Name == pmn))).subscribe(pm => this.SecondaryMission = pm);
-    return this.SecondaryMission;
-  }
-
 }

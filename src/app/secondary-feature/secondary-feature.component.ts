@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { Objective } from '../models/objective';
 
 @Component({
   selector: 'app-secondary-feature',
@@ -6,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./secondary-feature.component.css']
 })
 export class SecondaryFeatureComponent implements OnInit {
-
+  @Input() secondaryMission: Objective
   constructor() { }
 
   ngOnInit() {

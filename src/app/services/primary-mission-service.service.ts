@@ -20,7 +20,7 @@ export class PrimaryMissionService {
   }
 
   getPrimaryMissions(): Observable<PrimaryMission[]> {
-    return this.httpClient.get<PrimaryMission[]>('./assets/primary-missions.json').pipe(map(result => result));
+    return this.httpClient.get<PrimaryMission[]>('./assets/primary-missions.json').pipe(map(result => result["primary-missions"] as PrimaryMission[]));
   }
 
   getPrimaryMissionByName(pmn: string): Observable<PrimaryMission> {

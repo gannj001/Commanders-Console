@@ -1,4 +1,11 @@
-<p>
-  {{ missionType.Name }}
-</p>
-<button (click)="setMissionType()">Choose {{missionType.Name}}</button>
+
+<div class="card border-info">
+  <div class="card-title card-header">
+    <h3>{{ missionType.Name }}</h3>
+  </div>
+  <div class="card-body text-info">
+    <p class="card-text">Minimum Size: {{ missionType.MinSize }}</p>
+    <p class="card-text">Maximum Size: {{ missionType.MaxSize }}</p>
+    <button class="btn btn-primary" (click)="setMissionType()">Choose {{missionType.Name}}</button>
+  </div>
+</div>

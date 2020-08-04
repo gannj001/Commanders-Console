@@ -1,4 +1,5 @@
 export class Objective {
     Name: string;
-    Objective: string;
+    Type?: string;
+    ObjectiveList: string[];
 }

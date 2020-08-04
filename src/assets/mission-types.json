@@ -13,7 +13,40 @@
             "Name": "Incursion",
             "MinSize": 501,
             "MaxSize": 1000,
-            "Missions": []
+            "Missions": [
+                "Divide and Conquer",
+                "Crossfire",
+                "Centre Ground",
+                "Forward Push",
+                "Ransack",
+                "Shifting Front"
+            ]
+        },
+        {
+            "Name": "Mission Type 3",
+            "MinSize": 1001,
+            "MaxSize": 2000,
+            "Missions": [
+                "Divide and Conquer",
+                "Crossfire",
+                "Centre Ground",
+                "Forward Push",
+                "Ransack",
+                "Shifting Front"
+            ]
+        },
+        {
+            "Name": "Mission Type 4",
+            "MinSize": 2001,
+            "MaxSize": 3000,
+            "Missions": [
+                "Divide and Conquer",
+                "Crossfire",
+                "Centre Ground",
+                "Forward Push",
+                "Ransack",
+                "Shifting Front"
+            ]
         }
     ]
 }

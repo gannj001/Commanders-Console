@@ -1,52 +1,52 @@
 {
     "secondary-objectives": [
         {
-            "class": "Purge The Enemy",
-            "objectives": [
+            "SecondaryType": "Purge The Enemy",
+            "Objectives": [
                 {
-                    "name": "Assassinate",
-                    "type": "End Game Objective",
-                    "objective": ""
+                    "Name": "Assassinate",
+                    "Type": "End Game Objective",
+                    "ObjectiveList":[]
                 },
                 {
-                    "name": "Bring it Down",
-                    "type": "End Game Objective",
-                    "objective":""
+                    "Name": "Bring it Down",
+                    "Type": "End Game Objective",
+                    "ObjectiveList":[]
                 },
                 {
-                    "name": "Titan Slayers",
-                    "type": "End Game Objective",
-                    "objective": ""
+                    "Name": "Titan Slayers",
+                    "Type": "End Game Objective",
+                    "ObjectiveList":[]
                 },
                 {
-                    "name": "Slay the Warlord",
-                    "type":"End Game Objective",
-                    "objective":""
+                    "Name": "Slay the Warlord",
+                    "Type":"End Game Objective",
+                    "ObjectiveList":[]
                 }
             ]
         },
         {
-            "class": "No Mercy, No Respite",
-            "objectives": [
+            "SecondaryType": "No Mercy, No Respite",
+            "Objectives": [
                 {
-                    "name": "Thin Their Ranks",
-                    "type":"End Game Objective",
-                    "objective":""
+                    "Name": "Thin Their Ranks",
+                    "Type":"End Game Objective",
+                    "ObjectiveList":[]
                 },
                 {
-                    "name":"Attrition",
-                    "type":"Progressive Objective",
-                    "objective":""
+                    "Name":"Attrition",
+                    "Type":"Progressive Objective",
+                    "ObjectiveList":[]
                 },
                 {
-                    "name":"While We Stand, We Fight",
-                    "type":"End Game Objective",
-                    "objective":""
+                    "Name":"While We Stand, We Fight",
+                    "Type":"End Game Objective",
+                    "ObjectiveList":[]
                 },
                 {
-                    "name":"First Strike",
-                    "type":"End Game Objective",
-                    "objective":""
+                    "Name":"First Strike",
+                    "Type":"End Game Objective",
+                    "ObjectiveList":[]
                 }
             ]
         }

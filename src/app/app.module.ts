@@ -12,6 +12,7 @@ import { PrimaryMissionService } from './services/primary-mission-service.servic
 import { MissionTypeService } from './services/mission-type.service';
 import { SecondaryFeatureComponent } from './secondary-feature/secondary-feature.component';
 import { SecondaryClassFeatureComponent } from './secondary-class-feature/secondary-class-feature.component';
+import { SecondaryMissionComponent } from './secondary-mission/secondary-mission.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { SecondaryClassFeatureComponent } from './secondary-class-feature/second
     MissionTypeFeatureComponent,
     PrimaryMissionComponent,
     SecondaryFeatureComponent,
-    SecondaryClassFeatureComponent
+    SecondaryClassFeatureComponent,
+    SecondaryMissionComponent
   ],
   imports: [
     BrowserModule,

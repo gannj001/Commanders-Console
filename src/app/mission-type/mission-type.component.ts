@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { MissionType } from '../models/mission-type';
 import { MissionTypeService } from '../services/mission-type.service';
+import { SecondaryClass } from '../models/secondary-class';
+import { SecondaryMissionService } from '../services/secondary-mission.service';
+import { SelectedMissionService } from '../services/selected-mission.service';
 
 
 @Component({
@@ -11,9 +14,10 @@ import { MissionTypeService } from '../services/mission-type.service';
 export class MissionTypeComponent implements OnInit {
 
   missionTypes: MissionType[];
-  selectedMissionType?: MissionType;
+  missionType: MissionType = null;
   
-  constructor(private mts: MissionTypeService) {
+  constructor(private mts: MissionTypeService,
+    private missionManager: SelectedMissionService) {
     
    }
 
@@ -21,12 +25,17 @@ export class MissionTypeComponent implements OnInit {
     this.mts.getMissionTypes().subscribe(mt => {
       this.missionTypes = mt["missionTypes"] as MissionType[]
     });
+    this.missionManager.getMissionType().subscribe(mt => {
+      this.missionType = mt as MissionType
+    });
    }
 
-
-  selectMissionHandler($event: any){
-    this.selectedMissionType = $event
-    console.log(this.selectedMissionType)
+  
+  selectMissionHandler($event: MissionType){
+    this.missionManager.setMissionType($event)
   }
 
+  cancelMissionType() {
+    this.missionManager.setMissionType(null)
+  }
 }

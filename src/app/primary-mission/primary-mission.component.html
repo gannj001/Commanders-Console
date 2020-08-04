@@ -1,15 +1,26 @@
-
-<hr/>
-
-<p>{{ selectedMissionType.Name }}</p>
-<p *ngIf="selectedPrimaryMission">Primary Mission: {{ selectedPrimaryMission.Name }}</p>
-<ul>
-  <li *ngFor="let pm of this.selectedMissionType.Missions">
-    <button (click)="setPrimaryMission(pm)">Choose {{ pm }}</button>
-  </li>
-</ul>
-
-<p>All Missions</p>
-<ol>
-  <ul *ngFor="let pm of allPrimaryMissions">{{ pm | json }}</ul>
-</ol>
+<div *ngIf="selectedMissionType">
+  <div *ngIf="selectedPrimaryMission; else primaryMissionSelector">
+    <div class="jumbotron">
+      <h1>Primary Mission: {{ selectedPrimaryMission.Name }}</h1><button class="btn btn-danger" (click)="cancelPrimaryMission()">Cancel</button>
+    </div>
+  </div>
+  <ng-template #primaryMissionSelector>
+    <div class="jumbotron">
+      <h1>Primary Mission</h1>
+      <div class="card-group">
+        <div class="card border-info" *ngFor="let pm of validPrimaryMissions">
+          <div class="card-title card-header">
+            <h4>{{ pm.Name }}</h4>
+          </div>
+          <div class="card-body text-info">
+            <p class="card-text">{{ pm.PrimaryObjective.Name }}({{ pm.PrimaryObjective.Type }})</p>
+            <ul>
+              <li class="card-text" *ngFor="let objItm of pm.PrimaryObjective.ObjectiveList">{{ objItm }}</li>
+            </ul>
+            <button class="btn btn-primary" (click)="setPrimaryMission(pm)">Choose {{ pm.Name }}</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </ng-template>
+</div>
