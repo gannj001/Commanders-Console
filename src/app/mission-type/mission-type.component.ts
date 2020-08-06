@@ -13,8 +13,8 @@ import { SelectedMissionService } from '../services/selected-mission.service';
 })
 export class MissionTypeComponent implements OnInit {
 
-  missionTypes: MissionType[];
-  missionType: MissionType = null;
+  missionTypes: MissionType[] = [];
+  missionType: MissionType;
   
   constructor(private mts: MissionTypeService,
     private missionManager: SelectedMissionService) {
@@ -22,20 +22,24 @@ export class MissionTypeComponent implements OnInit {
    }
 
   ngOnInit() {
-    this.mts.getMissionTypes().subscribe(mt => {
-      this.missionTypes = mt["missionTypes"] as MissionType[]
+    this.mts.getMissionTypes().subscribe(mts => {
+      this.missionTypes = mts as MissionType[]
     });
     this.missionManager.getMissionType().subscribe(mt => {
       this.missionType = mt as MissionType
     });
-   }
+  }
 
-  
+  setMissionType(mt: MissionType){
+    this.missionManager.setMissionType(mt)
+  }
+
   selectMissionHandler($event: MissionType){
     this.missionManager.setMissionType($event)
   }
 
   cancelMissionType() {
-    this.missionManager.setMissionType(null)
+    this.missionManager.setMissionType(null);
+    this.missionManager.setPrimaryObjective(null);
   }
 }

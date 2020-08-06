@@ -1,12 +1,11 @@
-<div *ngIf="selectedMissionType">
   <div *ngIf="selectedPrimaryMission; else primaryMissionSelector">
     <div class="jumbotron">
-      <h1>Primary Mission: {{ selectedPrimaryMission.Name }}</h1><button class="btn btn-danger" (click)="cancelPrimaryMission()">Cancel</button>
+      <h3>Primary Mission: {{ selectedPrimaryMission.Name }} <button class="btn btn-danger" (click)="cancelPrimaryMission()">Cancel</button></h3>
     </div>
   </div>
   <ng-template #primaryMissionSelector>
     <div class="jumbotron">
-      <h1>Primary Mission</h1>
+      <h3>Primary Mission</h3>
       <div class="card-group">
         <div class="card border-info" *ngFor="let pm of validPrimaryMissions">
           <div class="card-title card-header">
@@ -23,4 +22,3 @@
       </div>
     </div>
   </ng-template>
-</div>

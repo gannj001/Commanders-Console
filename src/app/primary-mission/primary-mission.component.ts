@@ -19,11 +19,10 @@ export class PrimaryMissionComponent implements OnInit {
   allPrimaryMissions: PrimaryMission[];
   selectedPrimaryMission?: PrimaryMission;
   validPrimaryMissions: PrimaryMission[] = [];
-  selectedMissionType: MissionType;
+  selectedMissionType?: MissionType;
 
   constructor(
     private pms: PrimaryMissionService,
-    private sms: SecondaryMissionService,
     private missionManager: SelectedMissionService
     ) { }
 
@@ -32,13 +31,19 @@ export class PrimaryMissionComponent implements OnInit {
       this.allPrimaryMissions = pm as PrimaryMission[]
       this.missionManager.getMissionType().subscribe(mt => {
         this.selectedMissionType = mt;
-        mt.Missions.forEach(mission => {
+        if (this.selectedMissionType != null) {
+        this.selectedMissionType.Missions.forEach(mission => {
           this.validPrimaryMissions.push(
             this.allPrimaryMissions.find(m => m.Name == mission) as PrimaryMission
           )
         });
+      }
       });
     });
+
+    this.missionManager.getPrimaryObjective().subscribe(po => {
+      this.selectedPrimaryMission = po
+    })
     
   }
 

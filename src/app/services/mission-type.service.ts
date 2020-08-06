@@ -19,7 +19,7 @@ export class MissionTypeService {
   }
 
   getMissionTypes() : Observable<MissionType[]>{
-    return this.httpClient.get<MissionType[]>('./assets/mission-types.json').pipe(map(result => result));
+    return this.httpClient.get<MissionType[]>('./assets/mission-types.json').pipe(map(result => result["missionTypes"] as MissionType[]));
   }
 
   getMissionTypeByName(mtn: string): Observable<MissionType> {
