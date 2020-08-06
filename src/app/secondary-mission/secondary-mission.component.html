@@ -1,9 +1,10 @@
-<div class="row">
-  <div class="col-sm-2">
-    <h5>Primary Mission Secondary</h5>
-    <app-secondary-feature [secondaryMission]="primaryMission.SecondaryObjective"></app-secondary-feature>
+
+<div class="jumbotron">
+  <div class="row">
+    <app-secondary-class-feature [secondaryObjective]="primaryMission.SecondaryObjective"></app-secondary-class-feature>
   </div>
-  <div *ngFor="let sc of secondaryClasses" class="col-sm-2">
-    <app-secondary-class-feature [secondaryClass]="sc"></app-secondary-class-feature>
+
+  <div *ngFor="let sc of secondaryClasses" class="row">
+      <app-secondary-class-feature [secondaryClass]="sc"></app-secondary-class-feature>
   </div>
 </div>

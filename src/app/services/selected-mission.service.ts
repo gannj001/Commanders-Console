@@ -45,6 +45,16 @@ export class SelectedMissionService {
     });
   }
 
+  resetSelectedMissions() {
+    this.clearSecondaryObjective()
+    this.setPrimaryObjective(null)
+    this.setMissionType(null)
+  }
+
+  clearSecondaryObjective() {
+    this._secondaryMissions = new ReplaySubject<Objective[]>()
+  }
+
   getMissionType(): Observable<MissionType> {
     return this.missionType
   }

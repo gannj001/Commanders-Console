@@ -39,7 +39,6 @@ export class MissionTypeComponent implements OnInit {
   }
 
   cancelMissionType() {
-    this.missionManager.setMissionType(null);
-    this.missionManager.setPrimaryObjective(null);
+    this.missionManager.resetSelectedMissions();
   }
 }

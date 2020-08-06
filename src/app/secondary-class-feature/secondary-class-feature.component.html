@@ -1,4 +1,7 @@
 
 <h5>{{ secondaryClass.SecondaryType }}</h5>
-  <app-secondary-feature *ngFor="let sm of secondaryClass.Objectives" [secondaryMission]="sm"></app-secondary-feature>
+<h6 *ngIf="chosenSecondary">{{ chosenSecondary.Name }} Selected</h6>
+<div class="card-group">
+  <app-secondary-feature *ngFor="let sm of secondaryClass.Objectives" [secondaryMission]="sm" [secondaryChosen]="secondaryChosen" (secondarySelected)="updateSecondary($event)"></app-secondary-feature>
+</div>
 

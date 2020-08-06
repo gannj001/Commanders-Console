@@ -1,10 +1,7 @@
 import { Component, OnInit, Input, OnChanges, SimpleChanges, Output } from '@angular/core';
 import { PrimaryMissionService } from '../services/primary-mission-service.service';
 import { PrimaryMission } from '../models/primary-mission';
-import { SecondaryMissionService } from '../services/secondary-mission.service';
-import { SecondaryClass } from '../models/secondary-class';
 import { SelectedMissionService } from '../services/selected-mission.service';
-import { PipeDefWithMeta } from '@angular/core/src/render3';
 import { MissionType } from '../models/mission-type';
 
 @Component({
@@ -53,13 +50,9 @@ export class PrimaryMissionComponent implements OnInit {
     this.missionManager.setPrimaryObjective(pm)
   }
 
-  getAllMissions() {
-    
-    console.log(this.allPrimaryMissions)
-  }
-
   cancelPrimaryMission() {
     this.missionManager.setPrimaryObjective(null)
+    this.missionManager.clearSecondaryObjective()
   }
 
 }

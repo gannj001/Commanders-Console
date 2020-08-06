@@ -1,5 +1,28 @@
+<div class="card">
+  <div class="card-header">
+    <strong>{{ secondaryMission.Name }}</strong>
+    <ng-template [ngIf]="selected">
+      <strong>Selected!</strong>
+    </ng-template>
+  </div>
+  <div class="card-body text-info">
+    <p class="card-text">Type: {{ secondaryMission.Type }}</p>
+    <ul>
+      <li class="card-text" *ngFor="let objItm of secondaryMission.ObjectiveList">{{ objItm }}</li>
+    </ul>
+  </div>
 
-<h2>{{ secondaryMission.Name }}</h2>
-<p>
-  Type: {{ secondaryMission.Type }}
-</p>
+  <div class="card-footer">
+    <div *ngIf="!disabled; else dis">
+      <div *ngIf="selected; else sel">
+        <button class="btn btn-danger" (click)="unselectSecondary()">Unselect</button>
+      </div>
+      <ng-template #sel>
+        <button class="btn btn-primary" (click)="selectSecondary()">Select</button>
+      </ng-template>
+    </div>
+    <ng-template #dis>
+      Disabled
+    </ng-template>  
+  </div>
+</div>
