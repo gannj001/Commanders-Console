@@ -49,6 +49,66 @@
                     "ObjectiveList":[]
                 }
             ]
+        },
+        {
+            "SecondaryType": "Battlefield Supremacy",
+            "Objectives": [
+                {
+                    "Name": "Engage On All Fronts",
+                    "Type": "Progressive Objective",
+                    "ObjectiveList":[]
+                },
+                {
+                    "Name": "Linebreaker",
+                    "Type": "Progressive Objective",
+                    "ObjectiveList":[]
+                },
+                {
+                    "Name": "Domination",
+                    "Type": "Progressive Objective",
+                    "ObjectiveList":[]
+                }
+            ]
+        },
+        {
+            "SecondaryType": "Shadow Operations",
+            "Objectives":[
+                {
+                    "Name": "Investigate Sites",
+                    "Type":"Progressive Objective",
+                    "ObjectiveList":[]
+                },
+                {
+                    "Name": "Repair Teleport Homer",
+                    "Type": "Progressive Objective",
+                    "ObjectiveList":[]
+                },
+                {
+                    "Name": "Raise The Banners High",
+                    "Type": "Progressive Objective",
+                    "ObjectiveList":[]
+                }
+            ]
+        },
+        {
+            "SecondaryType": "Warpcraft",
+            "Objectives": [
+                {
+                    "Name": "Mental Interrogation",
+                    "Type": "Progressive Objective",
+                    "ObjectiveList":[]
+                },
+                {
+                    "Name": "Psychic Ritual",
+                    "Type":"End Game Objective",
+                    "ObjectiveList":[]
+                },
+                {
+                    "Name": "Abhor The Witch",
+                    "Type": "End Game Objective",
+                    "ObjectiveList":[]
+                }
+            ]
         }
     ]
 }

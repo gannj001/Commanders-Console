@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, OnDestroy } from '@angular/core';
 import { SecondaryClass } from '../models/secondary-class';
 import { SecondaryMissionService } from '../services/secondary-mission.service';
 import { Observable } from 'rxjs';
@@ -20,11 +20,10 @@ export class SecondaryClassFeatureComponent implements OnInit {
   constructor(
     private sms: SecondaryMissionService,
     private missionManager: SelectedMissionService) { }
+  
 
   ngOnInit() {
-    if (this.secondaryClass) {
-      this.getAllSecondaryMissions()
-    } else if (this.secondaryObjective) {
+    if (this.secondaryObjective) {
       this.secondaryClass = new SecondaryClass()
       this.secondaryClass.SecondaryType = "Mission Secondary"
       this.secondaryClass.Objectives.push(this.secondaryObjective)

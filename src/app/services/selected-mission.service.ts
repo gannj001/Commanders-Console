@@ -14,23 +14,26 @@ export class SelectedMissionService {
   public primaryMission: Observable<PrimaryMission> = this._primaryMission.asObservable();
   private _secondaryMissions: ReplaySubject<Objective[]> = new ReplaySubject<Objective[]>(1);
   public secondaryMissions: Observable<Objective[]> = this._secondaryMissions.asObservable();
+  private _secondaryArray: Objective[] = []
+  private _secondariesSelected: ReplaySubject<boolean> = new ReplaySubject<boolean>(1);
+  public secondariesSelected: Observable<boolean> = this._secondariesSelected.asObservable();
   
 
-  constructor() { }
+  constructor() {
+    this._secondariesSelected.next(false);
+    this._secondaryMissions.next(this._secondaryArray);
+   }
 
-  addSecondaryObjective(obj: Objective): boolean {
-    var out: boolean;
-    this.secondaryMissions.subscribe(sm => {
-      if (sm.length >= 3){
-        out = false;
-      } else {
-        sm.push(obj);
-        this._secondaryMissions.next(sm);
-        out = true;
+  addSecondaryObjective(obj: Objective) {
+    if(this._secondaryArray.length < 3) {
+      this._secondaryArray.push(obj)
+      if(this._secondaryArray.length >= 3) {
+        this._secondariesSelected.next(true);
       }
-    });
+    }
+    this._secondaryMissions.next(this._secondaryArray);
+    
   
-    return out
   }
 
   getPrimaryObjective(): Observable<PrimaryMission> {
@@ -38,11 +41,13 @@ export class SelectedMissionService {
   }
 
   removeSecondaryObjective(objName: string) {
-    this.secondaryMissions.subscribe(sm =>{
-      var i = sm.findIndex(obj => obj.Name === objName);
-      sm.splice(i, 1);
-      this._secondaryMissions.next(sm);
-    });
+    var i = this._secondaryArray.findIndex(o => o.Name === objName)
+    if (i != -1) {
+      this._secondaryArray.splice(i, 1);
+      if(this._secondaryArray.length < 3){
+        this._secondariesSelected.next(false)
+      }
+    }
   }
 
   resetSelectedMissions() {
@@ -56,7 +61,11 @@ export class SelectedMissionService {
   }
 
   getMissionType(): Observable<MissionType> {
-    return this.missionType
+    return this.missionType;
+  }
+
+  getSecondaryMissions(): Observable<Array<Objective>> {
+    return this.secondaryMissions;
   }
 
   setPrimaryObjective(pm: PrimaryMission) {

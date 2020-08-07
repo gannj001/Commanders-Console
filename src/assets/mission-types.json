@@ -23,29 +23,26 @@
             ]
         },
         {
-            "Name": "Mission Type 3",
+            "Name": "Strike Force",
             "MinSize": 1001,
             "MaxSize": 2000,
             "Missions": [
-                "Divide and Conquer",
-                "Crossfire",
-                "Centre Ground",
-                "Forward Push",
-                "Ransack",
-                "Shifting Front"
+                "Retrieval Mission",
+                "Front-Line Warfare",
+                "The Four Pillars",
+                "No Man's Land",
+                "Scorched Earth",
+                "Vital Intelligence"
             ]
         },
         {
-            "Name": "Mission Type 4",
+            "Name": "Onslaught",
             "MinSize": 2001,
             "MaxSize": 3000,
             "Missions": [
-                "Divide and Conquer",
-                "Crossfire",
-                "Centre Ground",
-                "Forward Push",
-                "Ransack",
-                "Shifting Front"
+                "Lines Of Battle",
+                "All-Out War",
+                "Pathway To Glory"
             ]
         }
     ]

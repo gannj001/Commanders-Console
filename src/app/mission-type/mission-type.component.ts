@@ -1,8 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MissionType } from '../models/mission-type';
 import { MissionTypeService } from '../services/mission-type.service';
-import { SecondaryClass } from '../models/secondary-class';
-import { SecondaryMissionService } from '../services/secondary-mission.service';
 import { SelectedMissionService } from '../services/selected-mission.service';
 
 

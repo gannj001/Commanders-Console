@@ -5,7 +5,8 @@ import {
   Output,
   EventEmitter,
   SimpleChanges,
-  OnChanges
+  OnChanges,
+  OnDestroy
 } from '@angular/core';
 
 import { Objective } from '../models/objective';
@@ -20,21 +21,24 @@ import { SelectedMissionService } from '../services/selected-mission.service';
 //TODO: Add event handler to update parent object when a mission of this type has been selected and disable all children
 
 
-export class SecondaryFeatureComponent implements OnInit, OnChanges {
+export class SecondaryFeatureComponent implements OnInit, OnChanges, OnDestroy {
   @Input() secondaryMission: Objective
   @Input() secondaryChosen: boolean
   @Output() secondarySelected: EventEmitter<Objective> = new EventEmitter<Objective>();
   disabled?: boolean;
   selected: boolean;
+  secondariesSelected: boolean;
 
   constructor(
     private missionManager: SelectedMissionService
   ) { }
+  ngOnDestroy() {
+  }
 
   ngOnInit() {
-    this.missionManager.secondaryMissions.subscribe(sm => {
-      if (sm.length >= 3){
-        this.disabled = true;
+    this.missionManager.secondariesSelected.subscribe(b => {
+      if (!this.selected){
+        this.disabled = b;
       }
     });
     
@@ -48,16 +52,20 @@ export class SecondaryFeatureComponent implements OnInit, OnChanges {
     }
   }
 
-  selectSecondary(){
+  addSecondary(){
     this.secondarySelected.emit(this.secondaryMission);
+    
+    console.log("setting secondary " + this.secondaryMission.Name)
     this.missionManager.addSecondaryObjective(this.secondaryMission);
     this.selected = true;
+    this.disabled = false;
   }
 
   unselectSecondary(){
     this.secondarySelected.emit(null);
     this.missionManager.removeSecondaryObjective(this.secondaryMission.Name)
     this.selected = false;
+    this.disabled = false;
   }
   
   
