@@ -60,11 +60,13 @@
             "Name": "Divide and Conquer",
             "PrimaryObjective": {
                 "Name": "",
+                "Type":"Progressive Objective",
                 "ObjectiveList": [
                 ]
             },
             "SecondaryObjective": {
                 "Name": "",
+                "Type":"Progressive Objective",
                 "ObjectiveList":[]
             }
         },
@@ -72,11 +74,13 @@
             "Name": "Crossfire",
             "PrimaryObjective": {
                 "Name": "",
+                "Type":"Progressive Objective",
                 "ObjectiveList": [
                 ]
             },
             "SecondaryObjective": {
                 "Name": "",
+                "Type":"Progressive Objective",
                 "ObjectiveList":[]
             }
         },
@@ -84,11 +88,13 @@
             "Name": "Centre Ground",
             "PrimaryObjective": {
                 "Name": "",
+                "Type":"Progressive Objective",
                 "ObjectiveList": [
                 ]
             },
             "SecondaryObjective": {
                 "Name": "",
+                "Type":"Progressive Objective",
                 "ObjectiveList":[]
             }
         
@@ -97,11 +103,13 @@
             "Name": "Forward Push",
             "PrimaryObjective": {
                 "Name": "",
+                "Type":"Progressive Objective",
                 "ObjectiveList": [
                 ]
             },
             "SecondaryObjective": {
                 "Name": "",
+                "Type":"Progressive Objective",
                 "ObjectiveList":[]
             }
         
@@ -110,11 +118,13 @@
             "Name": "Ransack",
             "PrimaryObjective": {
                 "Name": "",
+                "Type":"Progressive Objective",
                 "ObjectiveList": [
                 ]
             },
             "SecondaryObjective": {
                 "Name": "",
+                "Type":"Progressive Objective",
                 "ObjectiveList":[]
             }
         
@@ -123,24 +133,28 @@
             "Name": "Shifting Front",
             "PrimaryObjective": {
                 "Name": "",
+                "Type":"Progressive Objective",
                 "ObjectiveList": [
                 ]
             },
             "SecondaryObjective": {
                 "Name": "",
+                "Type":"Progressive Objective",
                 "ObjectiveList":[]
             }
         
         },
         {
-            "Name": "Ransack Mission",
+            "Name": "Retrieval Mission",
             "PrimaryObjective": {
                 "Name": "",
+                "Type":"Progressive Objective",
                 "ObjectiveList": [
                 ]
             },
             "SecondaryObjective": {
                 "Name": "",
+                "Type":"Progressive Objective",
                 "ObjectiveList":[]
             }
         
@@ -149,11 +163,13 @@
             "Name": "Front-Line Warfare",
             "PrimaryObjective": {
                 "Name": "",
+                "Type":"Progressive Objective",
                 "ObjectiveList": [
                 ]
             },
             "SecondaryObjective": {
                 "Name": "",
+                "Type":"Progressive Objective",
                 "ObjectiveList":[]
             }
         },
@@ -161,11 +177,13 @@
             "Name": "The Four Pillars",
             "PrimaryObjective": {
                 "Name": "",
+                "Type":"Progressive Objective",
                 "ObjectiveList": [
                 ]
             },
             "SecondaryObjective": {
                 "Name": "",
+                "Type":"Progressive Objective",
                 "ObjectiveList":[]
             }
         
@@ -174,11 +192,13 @@
             "Name": "No Man's Land",
             "PrimaryObjective": {
                 "Name": "",
+                "Type":"Progressive Objective",
                 "ObjectiveList": [
                 ]
             },
             "SecondaryObjective": {
                 "Name": "",
+                "Type":"Progressive Objective",
                 "ObjectiveList":[]
             }
         
@@ -187,11 +207,13 @@
             "Name": "Scorched Earth",
             "PrimaryObjective": {
                 "Name": "",
+                "Type":"Progressive Objective",
                 "ObjectiveList": [
                 ]
             },
             "SecondaryObjective": {
                 "Name": "",
+                "Type":"Progressive Objective",
                 "ObjectiveList":[]
             }
         
@@ -200,24 +222,28 @@
             "Name": "Vital Intelligence",
             "PrimaryObjective": {
                 "Name": "",
+                "Type":"Progressive Objective",
                 "ObjectiveList": [
                 ]
             },
             "SecondaryObjective": {
                 "Name": "",
+                "Type":"Progressive Objective",
                 "ObjectiveList":[]
             }
         
         },
         {
-            "Name": "Lines Of Battke",
+            "Name": "Lines Of Battle",
             "PrimaryObjective": {
                 "Name": "",
+                "Type":"Progressive Objective",
                 "ObjectiveList": [
                 ]
             },
             "SecondaryObjective": {
                 "Name": "",
+                "Type":"Progressive Objective",
                 "ObjectiveList":[]
             }
         
@@ -226,11 +252,13 @@
             "Name": "All-Out War",
             "PrimaryObjective": {
                 "Name": "",
+                "Type":"Progressive Objective",
                 "ObjectiveList": [
                 ]
             },
             "SecondaryObjective": {
                 "Name": "",
+                "Type":"Progressive Objective",
                 "ObjectiveList":[]
             }
         
@@ -239,11 +267,13 @@
             "Name": "Pathway To Glory",
             "PrimaryObjective": {
                 "Name": "",
+                "Type":"Progressive Objective",
                 "ObjectiveList": [
                 ]
             },
             "SecondaryObjective": {
                 "Name": "",
+                "Type":"Progressive Objective",
                 "ObjectiveList":[]
             }
         
