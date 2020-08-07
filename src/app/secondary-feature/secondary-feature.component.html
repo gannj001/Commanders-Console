@@ -1,9 +1,6 @@
 <div class="card" [ngClass]="{'d-none': disabled}">
   <div class="card-header">
     <strong>{{ secondaryMission.Name }}</strong>
-    <ng-template [ngIf]="selected">
-      <strong>Selected!</strong>
-    </ng-template>
   </div>
   <div class="card-body text-info">
     <p class="card-text">Type: {{ secondaryMission.Type }}</p>
