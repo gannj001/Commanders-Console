@@ -6,7 +6,8 @@ import {
   EventEmitter,
   SimpleChanges,
   OnChanges,
-  OnDestroy
+  OnDestroy,
+  HostBinding
 } from '@angular/core';
 
 import { Objective } from '../models/objective';
@@ -22,9 +23,14 @@ export class SecondaryFeatureComponent implements OnInit, OnChanges {
   @Input() secondaryMission: Objective
   @Input() secondaryChosen: boolean
   @Output() secondarySelected: EventEmitter<Objective> = new EventEmitter<Objective>();
-  disabled?: boolean = false;
-  selected: boolean = false;
+
+  disabled?: boolean
+  selected: boolean
   secondariesSelected: boolean;
+
+  @HostBinding('class.card') card = true;
+  @HostBinding('class.d-none') dnone =  this.disabled;
+  @HostBinding('class.w-100') fullWidth = this.selected;
 
   constructor(
     private missionManager: SelectedMissionService
@@ -32,17 +38,18 @@ export class SecondaryFeatureComponent implements OnInit, OnChanges {
   
 
   ngOnInit() {
-    this.missionManager.secondariesSelected.subscribe(b => {
-      if (!this.selected && !this.secondaryChosen){
-        this.disabled = b;
-      }
-    });
+    this.disabled = false;
+    this.selected = false;
+    
     
   }
+
+
 
   ngOnChanges(changes: SimpleChanges) {
     if(!this.selected) {
       this.disabled = changes.secondaryChosen.currentValue
+      this.dnone = this.disabled
     }
   }
 
@@ -51,6 +58,7 @@ export class SecondaryFeatureComponent implements OnInit, OnChanges {
     
     this.missionManager.addSecondaryObjective(this.secondaryMission);
     this.selected = true;
+    this.fullWidth = this.selected;
     this.disabled = false;
   }
 
@@ -58,6 +66,7 @@ export class SecondaryFeatureComponent implements OnInit, OnChanges {
     this.secondarySelected.emit(null);
     this.missionManager.removeSecondaryObjective(this.secondaryMission.Name)
     this.selected = false;
+    this.fullWidth = this.selected;
   }
   
   

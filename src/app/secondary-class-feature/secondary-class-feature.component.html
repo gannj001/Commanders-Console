@@ -1,7 +1,6 @@
 <div [ngClass]="{'d-none': disabled}">
-<h5>{{ secondaryClass.SecondaryType }}</h5>
-<div class="card-group">
-  <app-secondary-feature *ngFor="let sm of secondaryClass.Objectives" [secondaryMission]="sm" [secondaryChosen]="secondaryChosen" (secondarySelected)="updateSecondary($event)"></app-secondary-feature>
+  <h5>{{ secondaryClass.SecondaryType }}</h5>
+  <div class="card-group">
+      <app-secondary-feature *ngFor="let sm of secondaryClass.Objectives" [secondaryMission]="sm" [secondaryChosen]="secondaryChosen" (secondarySelected)="updateSecondary($event)"></app-secondary-feature>
+  </div>
 </div>
-</div>
-

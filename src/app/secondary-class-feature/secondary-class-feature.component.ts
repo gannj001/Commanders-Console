@@ -17,6 +17,8 @@ export class SecondaryClassFeatureComponent implements OnInit, OnChanges {
   chosenSecondary: Objective = null
   secondaryChosen: boolean = false;
   disabled: boolean = false;
+  colWidth: number;
+  colWidthClass: string
 
   constructor(
     private sms: SecondaryMissionService,
@@ -39,6 +41,10 @@ export class SecondaryClassFeatureComponent implements OnInit, OnChanges {
       this.secondaryClass.SecondaryType = "Mission Secondary"
       this.secondaryClass.Objectives.push(this.secondaryObjective)
     }
+    this.colWidth = 12/this.secondaryClass.Objectives.length
+    this.colWidthClass = "col-sm-" + this.colWidth
+    console.log(this.colWidthClass)
+    this.disabled = false
   }
   
   getAllSecondaryMissions() {

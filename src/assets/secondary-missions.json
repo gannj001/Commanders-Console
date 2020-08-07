@@ -6,22 +6,22 @@
                 {
                     "Name": "Assassinate",
                     "Type": "End Game Objective",
-                    "ObjectiveList":[]
+                    "ObjectiveList":["Score 3 victory points at the end of the battle for each enemy CHARACTER model that is destroyed."]
                 },
                 {
                     "Name": "Bring it Down",
                     "Type": "End Game Objective",
-                    "ObjectiveList":[]
+                    "ObjectiveList":["Score 2 victory points at the end of the battle for each enemy MONSTER or VEHICLE model with a wounds characteristic of 10 or less that is destroyed, and 3 victory points for each enemy MONSTER or VEHICLE model with a Wounds characteristic of 11 or more that is destroyed."]
                 },
                 {
                     "Name": "Titan Slayers",
                     "Type": "End Game Objective",
-                    "ObjectiveList":[]
+                    "ObjectiveList":["Score 10 victory pints at the end of the battle if one enemy TITANIC model is destroyed, or 15 victory points if two or more enemy TITANIC models are destroyed."]
                 },
                 {
                     "Name": "Slay the Warlord",
                     "Type":"End Game Objective",
-                    "ObjectiveList":[]
+                    "ObjectiveList":["Score 6 victory points at the end of the battle if the enemy WARLORD is destroyed."]
                 }
             ]
         },
