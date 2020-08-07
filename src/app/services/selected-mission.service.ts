@@ -57,7 +57,8 @@ export class SelectedMissionService {
   }
 
   clearSecondaryObjective() {
-    this._secondaryMissions = new ReplaySubject<Objective[]>()
+    this._secondaryArray = []
+    this._secondaryMissions.next(this._secondaryArray)
   }
 
   getMissionType(): Observable<MissionType> {

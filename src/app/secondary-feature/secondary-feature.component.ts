@@ -25,8 +25,8 @@ export class SecondaryFeatureComponent implements OnInit, OnChanges, OnDestroy {
   @Input() secondaryMission: Objective
   @Input() secondaryChosen: boolean
   @Output() secondarySelected: EventEmitter<Objective> = new EventEmitter<Objective>();
-  disabled?: boolean;
-  selected: boolean;
+  disabled?: boolean = false;
+  selected: boolean = false;
   secondariesSelected: boolean;
 
   constructor(
@@ -37,12 +37,10 @@ export class SecondaryFeatureComponent implements OnInit, OnChanges, OnDestroy {
 
   ngOnInit() {
     this.missionManager.secondariesSelected.subscribe(b => {
-      if (!this.selected){
+      if (!this.selected && !this.secondaryChosen){
         this.disabled = b;
       }
     });
-    
-    this.disabled = this.secondaryChosen
     
   }
 
@@ -55,7 +53,6 @@ export class SecondaryFeatureComponent implements OnInit, OnChanges, OnDestroy {
   addSecondary(){
     this.secondarySelected.emit(this.secondaryMission);
     
-    console.log("setting secondary " + this.secondaryMission.Name)
     this.missionManager.addSecondaryObjective(this.secondaryMission);
     this.selected = true;
     this.disabled = false;
@@ -65,7 +62,6 @@ export class SecondaryFeatureComponent implements OnInit, OnChanges, OnDestroy {
     this.secondarySelected.emit(null);
     this.missionManager.removeSecondaryObjective(this.secondaryMission.Name)
     this.selected = false;
-    this.disabled = false;
   }
   
   
