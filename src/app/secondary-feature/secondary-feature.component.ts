@@ -18,10 +18,7 @@ import { SelectedMissionService } from '../services/selected-mission.service';
   styleUrls: ['./secondary-feature.component.css']
 })
 
-//TODO: Add event handler to update parent object when a mission of this type has been selected and disable all children
-
-
-export class SecondaryFeatureComponent implements OnInit, OnChanges, OnDestroy {
+export class SecondaryFeatureComponent implements OnInit, OnChanges {
   @Input() secondaryMission: Objective
   @Input() secondaryChosen: boolean
   @Output() secondarySelected: EventEmitter<Objective> = new EventEmitter<Objective>();
@@ -32,8 +29,7 @@ export class SecondaryFeatureComponent implements OnInit, OnChanges, OnDestroy {
   constructor(
     private missionManager: SelectedMissionService
   ) { }
-  ngOnDestroy() {
-  }
+  
 
   ngOnInit() {
     this.missionManager.secondariesSelected.subscribe(b => {

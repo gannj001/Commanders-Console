@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, OnDestroy } from '@angular/core';
+import { Component, OnInit, Input, OnDestroy, OnChanges, SimpleChanges } from '@angular/core';
 import { SecondaryClass } from '../models/secondary-class';
 import { SecondaryMissionService } from '../services/secondary-mission.service';
 import { Observable } from 'rxjs';
@@ -10,16 +10,27 @@ import { Objective } from '../models/objective';
   templateUrl: './secondary-class-feature.component.html',
   styleUrls: ['./secondary-class-feature.component.css']
 })
-export class SecondaryClassFeatureComponent implements OnInit {
+export class SecondaryClassFeatureComponent implements OnInit, OnChanges {
   @Input() secondaryClass?: SecondaryClass
   @Input() secondaryObjective?: Objective
   allSecondaries: SecondaryClass[]
   chosenSecondary: Objective = null
   secondaryChosen: boolean = false;
+  disabled: boolean = false;
 
   constructor(
     private sms: SecondaryMissionService,
     private missionManager: SelectedMissionService) { }
+
+  ngOnChanges(changes: SimpleChanges){
+    this.missionManager.secondariesSelected.subscribe(b => {
+      if(b && !this.secondaryChosen) {
+        this.disabled = true
+      } else {
+        this.disabled = false
+      }
+    })
+  }
   
 
   ngOnInit() {
