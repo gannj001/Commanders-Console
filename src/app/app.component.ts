@@ -11,7 +11,7 @@ import { PrimaryMission } from './models/primary-mission';
 
 
 export class AppComponent {
-  title = 'cmmndrs-console';
+  title = 'Commanders Console';
   missionType: MissionType;
   primaryObjective: PrimaryMission;
 
