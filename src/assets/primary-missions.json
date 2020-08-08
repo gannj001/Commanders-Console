@@ -368,47 +368,64 @@
         {
             "Name": "Lines Of Battle",
             "PrimaryObjective": {
-                "Name": "",
+                "Name": "Unified Advance",
                 "Type":"Progressive Objective",
                 "ObjectiveList": [
+                    "They control one or more objective markers.",
+                    "They control at least one objective marker labelled A, and at least one objective marker labelled C",
+                    "They control at least one objective marker labelled A, at least one objective maker labelled B and at least one objective marker labeled C."
                 ]
             },
             "SecondaryObjective": {
-                "Name": "",
+                "Name": "Hold The Centre",
                 "Type":"Progressive Objective",
-                "ObjectiveList":[]
-            }
-        
+                "ObjectiveList":["Score 5 victory points at the end of your Command phase if you control more objective markers labelled B than your opponent does and you have more models wholly within 12\" of the centre of the battlefield than your opponent does. This secondary objective cannot be scored in the first battle round."]
+            },
+            "MissionMap": "linesofbattle.png"
         },
         {
             "Name": "All-Out War",
             "PrimaryObjective": {
-                "Name": "",
+                "Name": "Domination",
                 "Type":"Progressive Objective",
                 "ObjectiveList": [
+                    "They control two or more objective markers",
+                    "They control three or more objective markers",
+                    "They control more objective markers than their opponent controls"
                 ]
             },
             "SecondaryObjective": {
-                "Name": "",
-                "Type":"Progressive Objective",
-                "ObjectiveList":[]
-            }
-        
+                "Name": "Surround Them",
+                "Type":"Progressive and End Game Objective",
+                "ObjectiveList":["Score 4 victory points at the end of your Command phase and at the end of the battle if you control both the objective markers in your deployment zone and one or more objective markers in your opponent's deployment zone. Score 8 victory points instead if you control all four objectives that are in deployment zones."]
+            },
+            "MissionMap": "alloutwar.png"
         },
         {
             "Name": "Pathway To Glory",
             "PrimaryObjective": {
-                "Name": "",
+                "Name": "Domination",
                 "Type":"Progressive Objective",
                 "ObjectiveList": [
+                    "They control two or more objective markers",
+                    "They control three or more objective markers",
+                    "They control more objective markers than their opponent controls"
                 ]
             },
+            "MissionRules": {
+                "Name": "Secure the Search Area",
+                "Rule": "The area of the battlefield within 12\" of the centre of the battlefield is the search area. In this mission, if you control an objective marker labelled A at the end of your Command phase, it remains under your control, even if you have no models within range of it, unless your opponent controls it at the end of a subsequent phase."
+            },
             "SecondaryObjective": {
-                "Name": "",
+                "Name": "Search for the Portal",
                 "Type":"Progressive Objective",
-                "ObjectiveList":[]
-            }
-        
+                "ObjectiveList":["Each time a unit from your army successfully completes the Search for the Portal action (see below) you score 1 victory point, plus 1 additional victory pint for each objective marker labelled A that is currently under your control (for a maximum of 5 victory points)."],
+                "Action":{
+                    "Name": "Search for the Portal",
+                    "Action": "One INFANTRY unit from your army (excluding CHARACTERS) can start to perform this action at the end of your Movement phase if it is wholly within the Search Area shown on the deployment map. The action is completed at the end of your next Command phase so long as the unit performing it is still wholly within the Search Area."
+                }
+            },
+            "MissionMap":"pathwaytoglory.png"
         }
     ]
 }
