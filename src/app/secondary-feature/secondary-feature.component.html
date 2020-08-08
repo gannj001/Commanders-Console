@@ -1,14 +1,16 @@
 
 <div class="card-header">
-  <strong>{{ secondaryMission.Name }} </strong>
+  <strong class="card-title">{{ secondaryMission.Name }} </strong>
   <button *ngIf="selected; else sel" class="btn btn-danger" (click)="unselectSecondary()">Unselect</button>
   <ng-template #sel>
     <button class="btn btn-primary" (click)="addSecondary()">Select</button>
   </ng-template>
+  
 </div>
 
 <div class="card-body text-info">
-  <p class="card-text">Type: {{ secondaryMission.Type }}</p>
-  <p>{{ secondaryMission.ObjectiveList[0] }}</p>
+  <p class="card-subtitle"><strong>Type: </strong>{{ secondaryMission.Type }}</p>
+  <p class="card-text"><strong>Objective: </strong>{{ secondaryMission.ObjectiveList[0] }}</p>
+  <p class="card-text" *ngIf="secondaryMission.Action"><strong>{{ secondaryMission.Action.Name }}:</strong> {{ secondaryMission.Action.Action }}</p>
 </div>
 

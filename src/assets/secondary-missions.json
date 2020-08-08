@@ -31,22 +31,22 @@
                 {
                     "Name": "Thin Their Ranks",
                     "Type":"End Game Objective",
-                    "ObjectiveList":[]
+                    "ObjectiveList":["If you select this objective, keep a tally of kill points; each time an enemy model is destroyed , add 1 to this tally (add 10 to this tally instead if the model that was destroyed had a Wounds characteristic of 10 or more). A model, if it is resurrected for any reason (i.e. it was destroyed and then subsequently returned to the battlefield), potentially add several points to this tally (assuming it is resurrected and subsequently destroyed several times over). At the end of the battle, divide your kill points by 10 and round down - the result is the number of victory points you score."]
                 },
                 {
                     "Name":"Attrition",
                     "Type":"Progressive Objective",
-                    "ObjectiveList":[]
+                    "ObjectiveList":["Score 4 victory points at the end of a battle round if more enemy units than friendly units are destroyed this battle round."]
                 },
                 {
                     "Name":"While We Stand, We Fight",
                     "Type":"End Game Objective",
-                    "ObjectiveList":[]
+                    "ObjectiveList":["If you select this objective, then before the battle you must identify which three models from your army (excluding models with the Fortification Battlefield Role) have the highest points value, and make a note of them on your army roster (if two or more models are tied, you can choose between them). If your army has three or fewer models, then you instead identify al the units in your army. A model's points cost includes the points of all weapons and wargear it is equipped with. You score 5 victory points for each of these models that are on the battlefield at the end of the battle."]
                 },
                 {
                     "Name":"First Strike",
                     "Type":"End Game Objective",
-                    "ObjectiveList":[]
+                    "ObjectiveList":["Score 5 victory points at the end of the battle if any enemy units were destroyed in the first battle round, and score an additional 3 victory points if more enemy units then friendly units were destroyed in the first battle round."]
                 }
             ]
         },
@@ -56,17 +56,17 @@
                 {
                     "Name": "Engage On All Fronts",
                     "Type": "Progressive Objective",
-                    "ObjectiveList":[]
+                    "ObjectiveList":["Score 2 victory points at the end of your turn if you have one or more units from your army wholly within three different table quarters, and those are all more then 6\" from the centre of the battlefield. Score 3 victory points instead if you have one or more units from your army wholly within each table quarter, and those units are all more than 6\" from the centre of the battlefield."]
                 },
                 {
                     "Name": "Linebreaker",
                     "Type": "Progressive Objective",
-                    "ObjectiveList":[]
+                    "ObjectiveList":["Score 4 victory points at the end of your turn if two or more units from your army (excluding AIRCRAFT) are wholly within your opponent's deployment zone."]
                 },
                 {
                     "Name": "Domination",
                     "Type": "Progressive Objective",
-                    "ObjectiveList":[]
+                    "ObjectiveList":["Score 3 victory points if you control more than half the total number of objective points on the battlefield at the end of your turn."]
                 }
             ]
         },
@@ -76,17 +76,29 @@
                 {
                     "Name": "Investigate Sites",
                     "Type":"Progressive Objective",
-                    "ObjectiveList":[]
+                    "ObjectiveList":["Score 3 victory points each time a unit in from your army successfully completes the following action:"],
+                    "Action": {
+                        "Name": "Investigate Sites (Action)",
+                        "Action": "One INFANTRY unit (excluding CHARACTERS) from your army can start to perform this action at the end of the movement phase if it is within 6\" of the centre of the battlefield and no enemy units (excluding AIRCRAFT) are within 6\" of the centre of the battlefield. The Action is complete at the end of your turn." 
+                    }
                 },
                 {
                     "Name": "Repair Teleport Homer",
                     "Type": "Progressive Objective",
-                    "ObjectiveList":[]
+                    "ObjectiveList":["Score 5 victory points each time a unit from your army successfully completes the following action: "],
+                    "Action": {
+                        "Name": "Repair Teleport Homer (Action)",
+                        "Action": "One INFANTRY unit from your army can start to perform this action at the end of your Movement phase if it is wholly within your opponent's deployment zone. The Action is completed at the end of your next Command Phase provided the unit attempting it is wholly within your opponent's deployment zone."
+                    }
                 },
                 {
                     "Name": "Raise The Banners High",
                     "Type": "Progressive Objective",
-                    "ObjectiveList":[]
+                    "ObjectiveList":["If you select this objective, then units in your army can perform the following action:"],
+                    "Action":{
+                        "Name": "Raise Banners (Action)",
+                        "Action": "One or more INFANTRY units..."
+                    }
                 }
             ]
         },
@@ -96,17 +108,25 @@
                 {
                     "Name": "Mental Interrogation",
                     "Type": "Progressive Objective",
-                    "ObjectiveList":[]
+                    "ObjectiveList":["Score 3 victory points each time you successfully complete the following psychic action:"],
+                    "Action": {
+                        "Name": "Mental Interrogation (Psychic Action - Warp Charge 4)",
+                        "Action": "One PSYKER CHARACTER from your army can attempt to perform this psychic action in your Psychic phase if it is within 18\" of any enemy CHARACTER model."
+                    }
                 },
                 {
                     "Name": "Psychic Ritual",
                     "Type":"End Game Objective",
-                    "ObjectiveList":[]
+                    "ObjectiveList":["Score 15 victory points at the end of the battle if any unit from your army successfully completed the following psychic action 3 times during the battle:"],
+                    "Action": {
+                        "Name":"Psychic Ritual (Psychic Action - Warp Charge 3)",
+                        "Action": "One PSYKER CHARACTER from your army can attempt to perform this psychic action in your Psychic phase if it is within 6\" of the centre of the battlefield."
+                    }
                 },
                 {
                     "Name": "Abhor The Witch",
                     "Type": "End Game Objective",
-                    "ObjectiveList":[]
+                    "ObjectiveList":["You cannot select this secondary if your army includes any PSYKER units. Score 5 victory points at the end of the battle for each enemy PSYKER CHARACTER unit that is destroyed, and 3 victory points for every other enemy PSYKER unit that is destroyed."]
                 }
             ]
         }
