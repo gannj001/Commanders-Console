@@ -93,11 +93,11 @@
                 },
                 {
                     "Name": "Raise The Banners High",
-                    "Type": "Progressive Objective",
+                    "Type": "Progressive and End Game Objective",
                     "ObjectiveList":["If you select this objective, then units in your army can perform the following action:"],
                     "Action":{
                         "Name": "Raise Banners (Action)",
-                        "Action": "One or more INFANTRY units..."
+                        "Action": "One or more INFANTRY units from your army can start to perform this action at the end of your Movement phase. Each unit from your army that starts to perform this action must be in range of a different objective marker that does not have one of your banners raised upon it (see below). A unit cannot start this action whilere are any enemy units (excluding AIRCRAFT) in range of the same objective marker. The Action is completed at the end of your turn. If this Action is successfully completed, that objective marker is said to have one of your army's banners raied on it (the banner is 'removed' if your opponent controls the objective marker at the start of any phase). You score 1 victory point at the end of each of your Command phases, and 1 victory point at the end of the battle, for each objective marker on the battlefield that has one of your banners rained upon it."
                     }
                 }
             ]
