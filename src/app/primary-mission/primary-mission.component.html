@@ -7,7 +7,7 @@
           <div class="card-title card-header">
             <h3>Primary Mission: {{ selectedPrimaryMission.Name }} <button class="btn btn-danger" (click)="cancelPrimaryMission()">Cancel</button></h3>
           </div>
-          <img *ngIf="selectedPrimaryMission.MissionMap" src='{{ "/assets/images/" + selectedPrimaryMission.MissionMap }}' class="img-fluid"/>
+          <img *ngIf="selectedPrimaryMission.MissionMap" src='{{ "/assets/images/" + selectedPrimaryMission.MissionMap }}' style="width:333px;height:227;display:block;margin:auto;"/>
           <div class="card-body text-info">
             
             <h3 class="card-text">{{ selectedPrimaryMission.PrimaryObjective.Name }} ({{ selectedPrimaryMission.PrimaryObjective.Type }})</h3>
@@ -32,7 +32,7 @@
         <div class="card-title card-header">
           <h4>{{ pm.Name }} <button class="btn btn-primary" (click)="setPrimaryMission(pm)">Select</button></h4>
         </div>
-        <img *ngIf="pm.MissionMap" src='{{ "/assets/images/" + pm.MissionMap }}' class="img-fluid" />
+        <img *ngIf="pm.MissionMap" src='{{ "/assets/images/" + pm.MissionMap }}' class="card-img-top" />
         <div class="card-body text-info">
           <p class="card-text"><strong>{{ pm.PrimaryObjective.Name }} ({{ pm.PrimaryObjective.Type }}): </strong></p>
           <p>At the beginning of each player's Command phase, the player whose turn it is scores 5 victory points for each of the following conditions they satisfy (for a maximum of 15 victory points):</p>
