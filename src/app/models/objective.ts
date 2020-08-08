@@ -6,4 +6,9 @@ export class Objective {
         Name: string,
         Action: string
     }
+    ObjectiveTable?: {
+        Path?:string
+        Headings?: string[],
+        Rows?: string[]
+    }
 }

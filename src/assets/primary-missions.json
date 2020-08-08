@@ -19,7 +19,8 @@
                 "Name": "Surgical Assault",
                 "Type": "Progressive Objective",
                 "ObjectiveList": ["Score 5 victory points if you control the objective marker in your opponent's deployment zone at the end of your turn."]
-            }
+            },
+            "MissionMap": "incisiveattack.png"
         },
         {
             "Name": "Outriders",
@@ -37,7 +38,8 @@
                 "Name": "Survey",
                 "Type": "Progressive Objective",
                 "ObjectiveList": ["Score 5 victory points if you control both of the objective markers that are not in either player's deployment zone at the end of your Command phase. This secondary objective cannot be scored in the first battle round."]
-            }
+            },
+            "MissionMap": "outriders.png"
         },
         {
             "Name": "Encircle",
@@ -53,8 +55,9 @@
             "SecondaryObjective": {
                 "Name": "Encircle",
                 "Type":"Progressive Objective",
-                "ObjectiveList": "Score 3 victory points if you have at least one unit from your army (excluding aircraft) wholly within 6\" of your battlefield edge at the end of your turn and at least one unit from your army (excluding aircraft) wholly within 6\" of your opponent's battlefield edge at the end of your turn (score 5 victory points instead if one of these units is also wholly within your opponent's deployment zone)"
-            }
+                "ObjectiveList": ["Score 3 victory points if you have at least one unit from your army (excluding aircraft) wholly within 6\" of your battlefield edge at the end of your turn and at least one unit from your army (excluding aircraft) wholly within 6\" of your opponent's battlefield edge at the end of your turn (score 5 victory points instead if one of these units is also wholly within your opponent's deployment zone)"]
+            },
+            "MissionMap": "encircle.png"
         },
         {
             "Name": "Divide and Conquer",
