@@ -32,7 +32,7 @@
             <p><strong>{{ pm.MissionRules.Name }}:</strong> {{ pm.MissionRules.Rule }}</p>
           </div>
           <p class="card-text"><strong>{{ pm.PrimaryObjective.Name }} ({{ pm.PrimaryObjective.Type }}): </strong></p>
-          <p>At the beginning of each player's Command phase, the player whose turn it is scores 5 victory points for each of the following conditions they satisfay (for a maximum of 15 victory points):</p>
+          <p>At the beginning of each player's Command phase, the player whose turn it is scores 5 victory points for each of the following conditions they satisfy (for a maximum of 15 victory points):</p>
           <ul>
             <li class="card-text" *ngFor="let objItm of pm.PrimaryObjective.ObjectiveList">{{ objItm }}</li>
           </ul>
