@@ -21,7 +21,28 @@
   <ng-template #primaryMissionSelector>
     <h3>Primary Mission</h3>
     <div class="card-group">
-      <div *ngFor="let pm of validPrimaryMissions" class="card border-info">
+      <div *ngFor="let pm of validPrimaryMissions | slice:0:3" class="card border-info">
+        <div class="card-title card-header">
+          <h4>{{ pm.Name }}</h4>
+        </div>
+        <img *ngIf="pm.MissionMap" src='{{ "/assets/images/" + pm.MissionMap }}' class="img" />
+        <div class="card-body text-info">
+          <div *ngIf="pm.MissionRules">
+            <h5>Mission Rules</h5>
+            <p><strong>{{ pm.MissionRules.Name }}:</strong> {{ pm.MissionRules.Rule }}</p>
+          </div>
+          <p class="card-text"><strong>{{ pm.PrimaryObjective.Name }} ({{ pm.PrimaryObjective.Type }}): </strong></p>
+          <p>At the beginning of each player's Command phase, the player whose turn it is scores 5 victory points for each of the following conditions they satisfay (for a maximum of 15 victory points):</p>
+          <ul>
+            <li class="card-text" *ngFor="let objItm of pm.PrimaryObjective.ObjectiveList">{{ objItm }}</li>
+          </ul>
+          <p>This primary mission cannot be scored in the first battle round.</p>
+          <button class="btn btn-primary" (click)="setPrimaryMission(pm)">Choose {{ pm.Name }}</button>
+        </div>
+      </div>
+    </div>
+    <div class="card-group">
+      <div *ngFor="let pm of validPrimaryMissions | slice:3:6" class="card border-info">
         <div class="card-title card-header">
           <h4>{{ pm.Name }}</h4>
         </div>

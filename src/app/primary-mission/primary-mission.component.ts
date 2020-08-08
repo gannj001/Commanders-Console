@@ -17,6 +17,7 @@ export class PrimaryMissionComponent implements OnInit {
   selectedPrimaryMission?: PrimaryMission;
   validPrimaryMissions: PrimaryMission[] = [];
   selectedMissionType?: MissionType;
+  indexes: Array<Number>
 
   constructor(
     private pms: PrimaryMissionService,
@@ -34,7 +35,9 @@ export class PrimaryMissionComponent implements OnInit {
             this.allPrimaryMissions.find(m => m.Name == mission) as PrimaryMission
           )
         });
-      }
+      } // end if
+      
+      this.indexes = new Array(this.validPrimaryMissions.length/3).fill(0)
       });
     });
 
