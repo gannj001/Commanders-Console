@@ -12,5 +12,15 @@
   <p class="card-subtitle"><strong>Type: </strong>{{ secondaryMission.Type }}</p>
   <p class="card-text"><strong>Objective: </strong>{{ secondaryMission.ObjectiveList[0] }}</p>
   <p class="card-text" *ngIf="secondaryMission.Action"><strong>{{ secondaryMission.Action.Name }}:</strong> {{ secondaryMission.Action.Action }}</p>
+  <table *ngIf="secondaryMission.ObjectiveTable" class="table">
+    <thead>
+      <th *ngFor="let s of secondaryMission.ObjectiveTable.Headings">{{s}}</th>
+    </thead>
+    <tbody>
+      <tr *ngFor="let row of secondaryMission.ObjectiveTable.Rows">
+        <td *ngFor="let d of row">{{ d }}</td>
+      </tr>
+    </tbody>
+  </table>
 </div>
 

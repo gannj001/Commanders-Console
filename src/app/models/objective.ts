@@ -9,6 +9,6 @@ export class Objective {
     ObjectiveTable?: {
         Path?:string
         Headings?: string[],
-        Rows?: string[]
+        Rows?: string[][]
     }
 }

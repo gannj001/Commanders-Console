@@ -105,16 +105,41 @@
         {
             "Name": "Forward Push",
             "PrimaryObjective": {
-                "Name": "",
+                "Name": "Take and Hold",
                 "Type":"Progressive Objective",
                 "ObjectiveList": [
+                    "They control one or more objective markers",
+                    "They control two or more objective markers",
+                    "They control more objective markers than their opponent controls"
                 ]
             },
+            "MissionRules":{
+                "Name": "Quick March",
+                "Rule": "Any Advance rolls of less than 3 made in the first battle round instead count as 3."
+            },
             "SecondaryObjective": {
-                "Name": "",
+                "Name": "Forward Push",
                 "Type":"Progressive Objective",
-                "ObjectiveList":[]
+                "ObjectiveList":["If you select this object then units in your army can perform the following action: "],
+                "Action": {
+                    "Name": "Forward Push",
+                    "Action": "One unit in your army can start to perform this action at the start of your Movement Phase if it is within range of an objective marker that you control. The action is completed at the end of your turn and you score a number of victory points depending on which objective marker this action was performed on:"
+                },
+                "ObjectiveTable": {
+                    "Headings": [
+                        "Objective Marker",
+                        "Blue Victory Points",
+                        "Red Victory Points"
+                    ],
+                    "Rows":[
+                        ["A", 1, 8],
+                        ["B", 2, 4],
+                        ["C", 4, 2],
+                        ["D", 8, 1]
+                    ]
+                }
             }
+            
         
         },
         {
