@@ -44,7 +44,7 @@
     <div class="card-group">
       <div *ngFor="let pm of validPrimaryMissions | slice:3:6" class="card border-info">
         <div class="card-title card-header">
-          <h4>{{ pm.Name }}</h4>
+          <h4>{{ pm.Name }} <button class="btn btn-primary" (click)="setPrimaryMission(pm)">Select</button></h4>
         </div>
         <img *ngIf="pm.MissionMap" src='{{ "/assets/images/" + pm.MissionMap }}' class="img" />
         <div class="card-body text-info">
@@ -58,7 +58,6 @@
             <li class="card-text" *ngFor="let objItm of pm.PrimaryObjective.ObjectiveList">{{ objItm }}</li>
           </ul>
           <p>This primary mission cannot be scored in the first battle round.</p>
-          <button class="btn btn-primary" (click)="setPrimaryMission(pm)">Choose {{ pm.Name }}</button>
         </div>
       </div>
     </div>
