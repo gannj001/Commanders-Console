@@ -62,44 +62,64 @@
         {
             "Name": "Divide and Conquer",
             "PrimaryObjective": {
-                "Name": "",
+                "Name": "Take and Hold",
                 "Type":"Progressive Objective",
                 "ObjectiveList": [
+                    "They control one or more objective markers",
+                    "They control two or more objective markers",
+                    "They control more objective markers than their opponent controls"
                 ]
             },
             "SecondaryObjective": {
-                "Name": "",
+                "Name": "Lines of Demarcation",
                 "Type":"Progressive Objective",
-                "ObjectiveList":[]
-            }
+                "ObjectiveList":["At the end of your turn, you score 4 victory points if you control both objective markers labelled A, or 2 victory points if control both objective markers labelled B."]
+            },
+            "MissionMap": "divideandconquer.png"
         },
         {
             "Name": "Crossfire",
             "PrimaryObjective": {
-                "Name": "",
+                "Name": "Take and Hold",
                 "Type":"Progressive Objective",
                 "ObjectiveList": [
+                    "They control one or more objective markers",
+                    "They control two or more objective markers",
+                    "They control more objective markers than their opponent controls"
                 ]
             },
+            "MissionRules":{
+                "Name": "Crossfire",
+                "Rule": "When resolving attacks against units that are within 9\" of the centre of the battlefield, those attacks ignore the benefits of cover provided you can satisfy at least one of the following conditions:\n- You control both objective markers labelled A and the attacking model's unit is in range of an objective marker labelled A.\n- You control both objective markers labelled B and the attacking model's unit is in range of an objective marker labelled B."
+            },
             "SecondaryObjective": {
-                "Name": "",
+                "Name": "Outflank",
                 "Type":"Progressive Objective",
-                "ObjectiveList":[]
-            }
+                "ObjectiveList":["At the end of your command phase, you score 3 victory points if you control both of the objective markers labelled A. Score 5 victory points instead if, at the end of your command phase, you control both of the objective markers labelled A and there is at least on enemy unit within 9\" of the centre of the battlefield. This secondary objective cannot be scored in the first battle round."]
+            },
+            "MissionMap": "crossfire.png"
         },
         {
             "Name": "Centre Ground",
             "PrimaryObjective": {
-                "Name": "",
+                "Name": "Take and Hold",
                 "Type":"Progressive Objective",
                 "ObjectiveList": [
+                    "They control one or more objective markers",
+                    "They control two or more objective markers",
+                    "They control more objective markers than their opponent controls"
                 ]
             },
             "SecondaryObjective": {
-                "Name": "",
+                "Name": "Centre Ground",
                 "Type":"Progressive Objective",
-                "ObjectiveList":[]
-            }
+                "ObjectiveList":["Each time a unit from your army succesfully completes the following action, you score 3 victory points if you control one of the objective markers labelled A, or 5 victory points if you currently control both objective markers labelled A."],
+                "Action":{
+                    "Name": "Centre Ground",
+                    "Action": "One unit from your army can start to perform this action at the end of your Movement phase if it is within range of an objective marker labelled A and no enemy units (excluding AIRCRAFT) are within range of that objective marker. The action is completed at the end of your next Command phase so long as the unit performing it is still within range of the same objective marker."
+                }
+            },
+            "MissionMap": "centreground.png"
         
         },
         {
@@ -138,50 +158,77 @@
                         ["D", 8, 1]
                     ]
                 }
-            }
+            },
+            "MissionMap": "forwardpush.png"
             
         
         },
         {
             "Name": "Ransack",
             "PrimaryObjective": {
-                "Name": "",
+                "Name": "Domination",
                 "Type":"Progressive Objective",
                 "ObjectiveList": [
+                    "They control two or more objective markers",
+                    "They control three or more objective markers",
+                    "They control more objective markers than their opponent controls"
                 ]
             },
             "SecondaryObjective": {
-                "Name": "",
+                "Name": "Ransack",
                 "Type":"Progressive Objective",
-                "ObjectiveList":[]
-            }
+                "ObjectiveList":["Score a number of victory points at the end of your Command phase if you control one or more of the objective markers that are within your opponent's territory, as shown on the table below:"],
+                "ObjectiveTable":{
+                    "Headings": [
+                        "Number of objective markers in opponent's territory you control",
+                        "Victory points scored"
+                    ],
+                    "Rows":[
+                        [1, 2],
+                        [2, 3],
+                        [3, 5]
+                    ]
+                }
+            },
+            "MissionMap": "ransack.png"
         
         },
         {
             "Name": "Shifting Front",
             "PrimaryObjective": {
-                "Name": "",
+                "Name": "Take and Hold",
                 "Type":"Progressive Objective",
                 "ObjectiveList": [
+                    "They control one or more objective markers",
+                    "They control two or more objective markers",
+                    "They control more objective markers than their opponent controls"
                 ]
             },
+            "MissionRules":{
+                "Name": "Supply Lines",
+                "Rule": "In this mission, a player only receives the Battle-forged CP bonus at the start of their Command phase if they control the objective in their deployment zone."
+            },
             "SecondaryObjective": {
-                "Name": "",
+                "Name": "Test Their Line",
                 "Type":"Progressive Objective",
-                "ObjectiveList":[]
-            }
+                "ObjectiveList":["Score 3 victory points at the end of your turn if two or more units from your army (excluding AIRCRAFT) are wholly within your opponent's deployment zone and at least two different battlefield edges have at least one those units wholly within 6\" of them (if one of those edges is yout opponent's battlefield edge, score 5 victory points instead). For the purposes of this objective, a unit can only count as being wholly within 6\" of one battlefield edge at a time - if a unit is with 6\" of two battlefield edges because it is in the corner of the battlefiled, you can select which edge it counts as being wholly within 6\" of at the end of your turn." ]
+            },
+            "MissionMap": "shiftingfront.png"
         
         },
         {
             "Name": "Retrieval Mission",
             "PrimaryObjective": {
-                "Name": "",
+                "Name": "Take and Hold",
                 "Type":"Progressive Objective",
                 "ObjectiveList": [
+                    "They control one or more objective markers",
+                    "They control two or more objective markers",
+                    "They control more objective markers than their opponent controls"
                 ]
             },
             "SecondaryObjective": {
-                "Name": "",
+                "Name": "Minimise Losses",
                 "Type":"Progressive Objective",
                 "ObjectiveList":[]
             }

@@ -2,7 +2,7 @@
   <div *ngIf="selectedPrimaryMission; else primaryMissionSelector">
     
       
-        <h3>Primary Mission: {{ selectedPrimaryMission.Name }}({{ selectedPrimaryMission.PrimaryObjective.Type }}) <button class="btn btn-danger" (click)="cancelPrimaryMission()">Cancel</button></h3>
+        <h3>Primary Mission: {{ selectedPrimaryMission.Name }} ({{ selectedPrimaryMission.PrimaryObjective.Type }}) <button class="btn btn-danger" (click)="cancelPrimaryMission()">Cancel</button></h3>
         <div class="row">
           <div class="col-6">
             <div *ngIf="selectedPrimaryMission.MissionRules">
