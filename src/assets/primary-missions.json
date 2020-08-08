@@ -229,83 +229,140 @@
             },
             "SecondaryObjective": {
                 "Name": "Minimise Losses",
-                "Type":"Progressive Objective",
-                "ObjectiveList":[]
-            }
+                "Type":"End Game Objective",
+                "ObjectiveList":["At the start of the battle, add up the number of units in oyur army - this is your army's Strength. If a unit splits to form two or more individual units during the battle, then immediately increase your army's Strength accordingly (e.g. if one unit in your army splits to form three individual units, your army's Strength is increased by 2). If a unit merges with another to form a combined unit during the battle, then decrease your army's strength accordingly (e.g. if two units from your army erge to form one unit, you immediately decrease your army's Strength by 1). At the end of the battle, add up how many units from your army are left on the battlefield, including all units embarked within TRANSPORTS, but excluding all units that have been added to your army during the battle. If the total is 75% or more of your army's Strength, score 15 points; if the total is less than 75%, but is 50% or more of your army's strength, score 10 victory points; if the total is less than 50%, but is 25% or more of your army's Strength, score 5 victory points."]
+            },
+            "MissionMap": "retrievalmission.png"
         
         },
         {
             "Name": "Front-Line Warfare",
             "PrimaryObjective": {
-                "Name": "",
+                "Name": "Take and Hold",
                 "Type":"Progressive Objective",
                 "ObjectiveList": [
+                    "They control one or more objective markers",
+                    "They control two or more objective markers",
+                    "They control more objective markers than their opponent controls"
                 ]
             },
             "SecondaryObjective": {
-                "Name": "",
+                "Name": "Vital Ground",
                 "Type":"Progressive Objective",
-                "ObjectiveList":[]
-            }
+                "ObjectiveList":["At the end of each of your Command phases, you score 3 victory points if you control the objective marker in your opponent's deployment zone, and score 2 victory points for each objective you control for each objective marker you control that is not in either player's deployment zone (for a maximum of 7 victory points). This secondary objective cannot be scored in the first battle round."]
+            },
+            "MissionMap": "frontlinewarfare.png"
         },
         {
             "Name": "The Four Pillars",
             "PrimaryObjective": {
-                "Name": "",
+                "Name": "Take and Hold",
                 "Type":"Progressive Objective",
                 "ObjectiveList": [
+                    "They control one or more objective markers",
+                    "They control two or more objective markers",
+                    "They control more objective markers than their opponent controls"
                 ]
             },
+            "MissionRules": {
+                "Name": "The Pillars",
+                "Rule": "In this mission, Reinforcement units cannot be set up within range of any objective markers."
+            },
             "SecondaryObjective": {
-                "Name": "",
+                "Name": "Siphon Power",
                 "Type":"Progressive Objective",
-                "ObjectiveList":[]
-            }
+                "ObjectiveList":["If you select this objective, units in your army can perform the following action: "],
+                "Action": {
+                    "Name": "Siphon Power",
+                    "Action": "One or more units from your army can start to perform this action at the end of your Movement phase. Each unit that starts to perform this action must be within range of a different objective. A unit cannot start this action while any enemy units (excluding AIRCRAFT) are in range of the same objective marker. The action is completed at the end of your next Command phase, and you score a number of victory points depending on how many units completed this action this phase, as shown in the table below:"
+                },
+                "ObjectiveTable":{
+                    "Headings":[
+                        "Siphon Power Actions",
+                        "Victory Points"
+                    ],
+                    "Rows": [
+                        [1, 1],
+                        [2, 3],
+                        [3, 6],
+                        [4, 10]
+                    ]
+                }
+            },
+            "MissionMap": "thefourpillars.png"
         
         },
         {
             "Name": "No Man's Land",
             "PrimaryObjective": {
-                "Name": "",
+                "Name": "Take and Hold",
                 "Type":"Progressive Objective",
                 "ObjectiveList": [
+                    "They control one or more objective markers",
+                    "They control two or more objective markers",
+                    "They control more objective markers than their opponent controls"
                 ]
             },
+            "MissionRules": {
+                "Name": "No Man's Land",
+                "Rule": "If a unit has a pre-battle rule that allows it to be set up anywhere on the battlefield, that unit must still be set up wholly within your deployment zone. If a unit has a pre-battle rule that allows it to make a move, it must end that move wholly within your deployment zone."
+            },
             "SecondaryObjective": {
-                "Name": "",
+                "Name": "Secure No Man's Land",
                 "Type":"Progressive Objective",
-                "ObjectiveList":[]
-            }
+                "ObjectiveList":["At the end of each of your turns, if you control the central objective marke you score a number of victory points equal to the current battle round number (so 1 victory point in the first battle round, 2 victory points in the second battle round etc.)."]
+            },
+            "MissionMap": "nomansland.png"
         
         },
         {
             "Name": "Scorched Earth",
             "PrimaryObjective": {
-                "Name": "",
+                "Name": "Take and Hold",
                 "Type":"Progressive Objective",
                 "ObjectiveList": [
+                    "They control one or more objective markers",
+                    "They control two or more objective markers",
+                    "They control more objective markers than their opponent controls"
                 ]
             },
             "SecondaryObjective": {
-                "Name": "",
-                "Type":"Progressive Objective",
-                "ObjectiveList":[]
-            }
+                "Name": "Raze",
+                "Type":"End Game Objective",
+                "ObjectiveList":["At the end of the battle, a player scores 5 victory points if one objective marker was removed from the battlefield due to a successful Raze Objective action performed by a unit from their army during the battle, and 15 victory points if two objective markers were so removed."]
+            },
+            "MissionRules":{
+                "Name": "Raze Objective (Action)",
+                "Rule": "One unit from your army can start to perform this action at the start of your Movement phase if it is within range of an objective that can be razed and no enemy units (excluding AIRCRAFT) are within range of that objective marker. Blue player can only attempt to raze the objective markers labelled B, and red player can only attempt to raze the objective markers labelled A. The action is completed at the end of your turn. If this action is successfully completed, that objective marker is razed and removed from the battlefield."
+            },
+            "MissionMap": "scorchedearth.png"
         
         },
         {
             "Name": "Vital Intelligence",
             "PrimaryObjective": {
-                "Name": "",
+                "Name": "Domination",
                 "Type":"Progressive Objective",
                 "ObjectiveList": [
+                    "They control two or more objective markers",
+                    "They control three or more objective markers",
+                    "They control more objective markers than their opponent controls"
                 ]
             },
+            "MissionRules": {
+                "Name": "Data Terminals",
+                "Rule": "The objective markers in this mission represent data terminals. In this mission, if you control an objective marker at the end of your Command phase, it remains under your control unless your opponent controls it at the end of any subsequent phase, even if you hve no models within range of it."
+            },
             "SecondaryObjective": {
-                "Name": "",
+                "Name": "Data Intercept",
                 "Type":"Progressive Objective",
-                "ObjectiveList":[]
-            }
+                "ObjectiveList":["Each time a unit from your army successfully completes the following action, you score a number of points equal to the number of objective markers you currently control:"],
+                "Action": {
+                    "Name": "Data Intercept",
+                    "Action": "One unit from your army can start to perform this action at the end of your Movement phase if it is within range of an objective marker and no enemy units (excluding AIRCRAFT) are within range of that objective marker. The action is completed at the end of your next Command phase so long as the unit performing it is still within range of the same objective marker."
+                }
+            },
+            "MissionMap": "vitalintelligence.png"
         
         },
         {
