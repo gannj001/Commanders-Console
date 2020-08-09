@@ -11,6 +11,7 @@ import { SecondaryFeatureComponent } from './secondary-feature/secondary-feature
 import { SecondaryClassFeatureComponent } from './secondary-class-feature/secondary-class-feature.component';
 import { SecondaryMissionComponent } from './secondary-mission/secondary-mission.component';
 import { SelectedMissionService } from './services/selected-mission.service';
+import { CookieModule } from 'ngx-cookie';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { SelectedMissionService } from './services/selected-mission.service';
     BrowserModule,
     FormsModule,
     HttpClientModule,
-    AppRoutingModule
+    AppRoutingModule,
+    CookieModule.forRoot()
   ],
   providers: [
   ],
