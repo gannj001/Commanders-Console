@@ -18,7 +18,8 @@
         <app-primary-mission *ngIf="missionType"></app-primary-mission>
         <app-secondary-mission *ngIf="primaryObjective"></app-secondary-mission>
 
-        <div *ngIf="missionType && primaryObjective && secondariesSelected">
+        <div *ngIf="missionType && primaryObjective && secondariesSelected" class="text-center">
+
             <button class="btn btn-primary" (click)="setPlaying()">Confirm Missions</button>
         </div>
     </ng-template>
