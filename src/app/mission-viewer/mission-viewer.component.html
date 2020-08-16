@@ -4,7 +4,7 @@
 <div class="jumbotron">
   <div class="card border-info">
     <div class="card-title card-header">
-      <h3>Primary Mission: {{ selectedPrimaryMission.Name }} <button (click)="resetPrimary()" class="btn btn-danger">Reset Primary</button></h3>
+      <h3>Primary Mission: {{ selectedPrimaryMission.Name }}</h3>
     </div>
     <img *ngIf="selectedPrimaryMission.MissionMap" src='{{ "/assets/images/" + selectedPrimaryMission.MissionMap }}' class="col-lg-8" style="display:block;margin:auto;"/>
     <div class="card-body text-info">
