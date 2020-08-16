@@ -14,14 +14,27 @@ export class AppComponent {
   title = 'Commanders Console';
   missionType: MissionType;
   primaryObjective: PrimaryMission;
-
+  secondariesSelected: boolean;
+  playing: boolean;
 
   constructor(private missionManager: SelectedMissionService) {
     this.missionManager.getMissionType().subscribe(mt => {
-      this.missionType = mt
+      this.missionType = mt;
     });
     this.missionManager.getPrimaryObjective().subscribe(po => {
-      this.primaryObjective = po
+      this.primaryObjective = po;
     });
+    this.missionManager.secondariesSelected.subscribe(b => {
+      this.secondariesSelected = b;
+    });
+    this.missionManager.getPlaying().subscribe(b => {
+      this.playing = b
+    });
+
+    
+  }
+  setPlaying() {
+    // 
+    this.missionManager.setPlaying(true);
   }
 }

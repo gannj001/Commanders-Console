@@ -18,30 +18,16 @@ export class SelectedMissionService {
   private _secondaryArray: Objective[] = []
   private _secondariesSelected: ReplaySubject<boolean> = new ReplaySubject<boolean>(1);
   public secondariesSelected: Observable<boolean> = this._secondariesSelected.asObservable();
+  private _playing: ReplaySubject<boolean> = new ReplaySubject<boolean>(1);
+  public playing: Observable<boolean> = this._playing.asObservable();
   
 
   constructor(private cs: CookieService) {
     this._secondariesSelected.next(false);
     this._secondaryMissions.next(this._secondaryArray);
     this._missionType.next();
-    var all = this.cs.getAll()
-    if (all){
-      if (all["primaryMission"]) {
-        console.log(JSON.parse(all["primaryMission"]) as PrimaryMission)
-        this._primaryMission.next(JSON.parse(all["primaryMission"]) as PrimaryMission)
-      }
-      if (all["missionType"]){
-        console.log(JSON.parse(all["missionType"]) as MissionType)
-        this._missionType.next(JSON.parse(all["missionType"]) as MissionType)
-      }
-      if (all["secondaries"]){
-        console.log(JSON.parse(all["secondaries"]) as Objective[])
-        this.setSecondaries(JSON.parse(all["secondaries"]) as Objective[])
-      }
-      if (all["secondariesSelected"]){
-        this._secondariesSelected.next(JSON.parse(all["secondariesSelected"]) as boolean)
-      }
-    }
+    var playing = this.cs.getObject("playing") as boolean
+    this._playing.next(playing);
 
     // var pm = this.cs.getObject("primaryMission");
     // console.log(pm.toString())
@@ -78,6 +64,15 @@ export class SelectedMissionService {
     this._secondaryMissions.next(this._secondaryArray);
     
   
+  }
+
+  setPlaying(b: boolean) {
+    this.cs.putObject("playing", b)
+    this._playing.next(b)
+  }
+
+  getPlaying(): Observable<boolean> {
+    return this.playing
   }
 
   getPrimaryObjective(): Observable<PrimaryMission> {

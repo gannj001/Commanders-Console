@@ -1,0 +1,55 @@
+<div class="jumbotron">
+  <h2>Mission Size: {{ selectedMissionType.Name }} ({{selectedMissionType.MinSize}}-{{selectedMissionType.MaxSize}})</h2>
+</div>
+<div class="jumbotron">
+  <div class="card border-info">
+    <div class="card-title card-header">
+      <h3>Primary Mission: {{ selectedPrimaryMission.Name }} <button (click)="resetPrimary()" class="btn btn-danger">Reset Primary</button></h3>
+    </div>
+    <img *ngIf="selectedPrimaryMission.MissionMap" src='{{ "/assets/images/" + selectedPrimaryMission.MissionMap }}' class="col-lg-8" style="display:block;margin:auto;"/>
+    <div class="card-body text-info">
+      
+      <h3 class="card-text">{{ selectedPrimaryMission.PrimaryObjective.Name }} ({{ selectedPrimaryMission.PrimaryObjective.Type }})</h3>
+      
+      <p class="card-text">At the beginning of each player's Command phase, the player whose turn it is scores 5 victory points for each of the following conditions they satisfay (for a maximum of 15 victory points):</p>
+      <ul>
+        <li class="card-text" *ngFor="let objItm of selectedPrimaryMission.PrimaryObjective.ObjectiveList">{{ objItm }}</li>
+      </ul>
+      <p class="card-text">This primary mission cannot be scored in the first battle round.</p>
+      <div *ngIf="selectedPrimaryMission.MissionRules">
+        <h4>Mission Rules</h4>
+        <p class="card-text"><strong>{{ selectedPrimaryMission.MissionRules.Name }}:</strong> {{ selectedPrimaryMission.MissionRules.Rule }}</p>
+      </div>
+    </div>
+    
+  </div>
+</div>
+<div class="jumbotron">
+  <h3>Secondary Objectives <button (click)="resetSecondaries()" class="btn btn-danger">Reset Secondaries</button></h3>
+  <div *ngFor="let secondaryMission of selectedSecondaries">
+    <div class="card border-info">
+      <div class="card-header">
+        <strong class="card-title">{{ secondaryMission.Name }} </strong>       
+      </div>
+      
+      <div class="card-body text-info">
+        <p class="card-subtitle"><strong>Type: </strong>{{ secondaryMission.Type }}</p>
+        <p class="card-text"><strong>Objective: </strong>{{ secondaryMission.ObjectiveList[0] }}</p>
+        <p class="card-text" *ngIf="secondaryMission.Action"><strong>{{ secondaryMission.Action.Name }}:</strong> {{ secondaryMission.Action.Action }}</p>
+        <table *ngIf="secondaryMission.ObjectiveTable" class="table">
+          <thead>
+            <th *ngFor="let s of secondaryMission.ObjectiveTable.Headings">{{s}}</th>
+          </thead>
+          <tbody>
+            <tr *ngFor="let row of secondaryMission.ObjectiveTable.Rows">
+              <td *ngFor="let d of row">{{ d }}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="jumbotron">
+  <button class="btn btn-danger text-center" (click)="resetMissions()">Reset Missions</button>
+</div>

@@ -1,18 +1,27 @@
 <div class="container-xl">
-    <div class="jumbotron">
-        <h1>Commander's Console Mission Manager</h1>
-        <p>Welcome to Commander's Console! Follow the instructions below:</p>
-        <ol>
-            <li>Choose a mission size</li>
-            <li>Choose a primary mission</li>
-            <li>Choose your secondary missions</li>
-        </ol>
-    </div>
+    
+        <div *ngIf="playing; else missionSelector">
+            <app-mission-viewer></app-mission-viewer>
+        </div>
+        <ng-template #missionSelector>
+            <div class="jumbotron">
+                <h1>Commander's Console Mission Manager</h1>
+                <p>Welcome to Commander's Console! Follow the instructions below:</p>
+                <ol>
+                    <li>Choose a mission size</li>
+                    <li>Choose a primary mission</li>
+                    <li>Choose your secondary missions</li>
+                </ol>
+            </div>
 
-    <app-mission-type></app-mission-type>
-    <app-primary-mission *ngIf="missionType"></app-primary-mission>
-    <app-secondary-mission *ngIf="primaryObjective"></app-secondary-mission>
+        <app-mission-type></app-mission-type>
+        <app-primary-mission *ngIf="missionType"></app-primary-mission>
+        <app-secondary-mission *ngIf="primaryObjective"></app-secondary-mission>
 
+        <div *ngIf="missionType && primaryObjective && secondariesSelected">
+            <button class="btn btn-primary" (click)="setPlaying()">Confirm Missions</button>
+        </div>
+    </ng-template>
     <router-outlet></router-outlet>
 </div>
 <footer class="footer">
